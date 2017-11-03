@@ -1,6 +1,6 @@
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v2').then(function(cache) {
+    caches.open('v3').then(function(cache) {
       return cache.addAll([
         '/keesern.github.io/',
         '/keesern.github.io/index.html',
@@ -28,7 +28,7 @@ self.addEventListener('fetch', function(event) {
         // and serve second one
         let responseClone = response.clone();
         
-        caches.open('v2').then(function (cache) {
+        caches.open('v3').then(function (cache) {
           cache.put(event.request, responseClone);
         });
         return response;
