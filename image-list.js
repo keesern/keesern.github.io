@@ -2,15 +2,15 @@ var Path = 'gallery/';
 
 var Gallery = { 'images' : [
   {
-    'name'  : 'Snow Troopers',
-    'alt' : 'Two lego solders in white outfits walking across an icy plain',
-    'url': 'gallery/snowTroopers.jpg',
+    'name'  : 'Lunch',
+    'alt' : 'You will always have your lunch.',
+    'url': 'gallery/lunchBox.jpg',
   },
 
   {
-    'name'  : 'Bounty Hunters',
-    'alt' : 'A group of bounty hunters meeting, aliens and humans in costumes.',
-    'url': 'gallery/bountyHunters.jpg',
+    'name'  : 'Jason Deli',
+    'alt' : 'But do you always have Jason\'s deli signature sub?',
+    'url': 'gallery/jasonDeli.jpg',
   },
   
 ]};

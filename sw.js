@@ -7,10 +7,8 @@ self.addEventListener('install', function(event) {
         '/keesern.github.io/style.css',
         '/keesern.github.io/app.js',
         '/keesern.github.io/image-list.js',
-        '/keesern.github.io/star-wars-logo.jpg',
-        '/keesern.github.io/gallery/bountyHunters.jpg',
-        '/keesern.github.io/gallery/myLittleVader.jpg',
-        '/keesern.github.io/gallery/snowTroopers.jpg'
+        '/keesern.github.io/unstoppableLunch.jpg',
+        '/keesern.github.io/gallery/lunchBox.jpg',
       ]);
     })
   );
@@ -34,7 +32,7 @@ self.addEventListener('fetch', function(event) {
         });
         return response;
       }).catch(function () {
-        return caches.match('/keesern.github.io/gallery/myLittleVader.jpg');
+        return caches.match('/keesern.github.io/gallery/snowTroopers.jpg');
       });
     }
   }));
