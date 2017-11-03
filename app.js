@@ -61,7 +61,7 @@ window.onload = function() {
 
       myImage.src = imageURL;
       myImage.setAttribute('alt', arrayResponse[1].alt);
-      myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>: Taken by ' + arrayResponse[1].credit;
+      myCaption.innerHTML = '<strong>' + arrayResponse[1].name + '</strong>;
 
       imgSection.appendChild(myFigure);
       myFigure.appendChild(myImage);
