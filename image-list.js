@@ -4,7 +4,7 @@ var Gallery = { 'images' : [
   {
     'name'  : 'Lunch',
     'alt' : 'You will always have your lunch.',
-    'url': 'gallery/lunchBox.jpg',
+    'url': 'gallery/lunchBox.gif',
   },
 
   {
