@@ -1,13 +1,6 @@
 var Path = 'gallery/';
 
 var Gallery = { 'images' : [
-      
-  {
-    'name'  : 'Darth Vader',
-    'alt' : 'A Black Clad warrior lego toy',
-    'url': 'gallery/myLittleVader.jpg',
-  },
-
   {
     'name'  : 'Snow Troopers',
     'alt' : 'Two lego solders in white outfits walking across an icy plain',
