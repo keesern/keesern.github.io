@@ -7,7 +7,7 @@ self.addEventListener('install', function(event) {
         '/keesern.github.io/style.css',
         '/keesern.github.io/app.js',
         '/keesern.github.io/image-list.js',
-        '/keesern.github.io/unstoppableLunch2.jpg',
+        '/keesern.github.io/unstoppableLunch2.png',
         '/keesern.github.io/gallery/jasonDeli.jpg'
       ]);
     })
