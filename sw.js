@@ -49,47 +49,6 @@ self.addEventListener('fetch', function(event) {
     }
   }));
   
-  
-    if (!event.request.url.endsWith(imgFilename)) {
-    return;
-  }
-
-  event.respondWith(new Promise((resolve, reject) => {
-    const request = self.indexedDB.open('images', dbVersion);
-
-    request.onerror = event => {
-      console.log('error opening IndexedDB');
-      reject();
-    };
-
-    request.onsuccess = event => {
-      const db = request.result;
-
-      db.onerror = event => {
-        console.log('error opening IndexedDB');
-      };
-
-      const transaction = db.transaction(['images'], 'readonly');
-
-      transaction.objectStore('images').get(imgFilename).onsuccess = event => {
-        const blob = event.target.result;
-
-        // This doesn't work with Firefox
-        // (tested with version 44.0.2 and 46.0a2)
-        resolve(
-          new Response(
-            blob,
-            {
-              headers: {
-                'Content-Type': blob.type,
-                'Content-Length': blob.size
-              }
-            }
-          )
-        );
-      };
-    };
-  }));
 });
 
   
