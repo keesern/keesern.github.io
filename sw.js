@@ -1,7 +1,7 @@
 
 'use strict';
 
-const dbVersion = 1;
+const dbVersion = 2;
 const imgFilename = '/keesern.github.io/unstoppableLunch2.png';
 
 self.addEventListener('install', function(event) {
