@@ -3,45 +3,22 @@
 
 const dbVersion = 2;
 const imgFilename = '/keesern.github.io/databasePic.jpg';
-self.addEventListener('install', event => {
-  console.log('installing service worker');
 
+self.addEventListener('install', function(event) {
   event.waitUntil(
-    new Promise((resolve, reject) => {
-      const request = self.indexedDB.open('images', dbVersion);
-
-      request.onerror = event => {
-        console.log('error opening IndexedDB');
-        reject();
-      };
-
-      request.onsuccess = event => {
-        const db = event.target.result;
-
-        db.onerror = event => {
-          console.log('error opening IndexedDB');
-        };
-
-        resolve(db);
-      };
-
-      request.onupgradeneeded = event => {
-        event.target.result.createObjectStore('images');
-      };
-    }).then(db => {
-      return fetch(imgFilename).then(response => {
-        return response.blob();
-      }).then(blob => {
-        const transaction = db.transaction(['images'], 'readwrite');
-
-        console.log('storing image blob:', blob);
-        transaction.objectStore('images').put(blob, imgFilename);
-        db.close();
-
-        return self.skipWaiting();
-      });
+    caches.open('v4').then(function(cache) {
+      return cache.addAll([
+        '/keesern.github.io/',
+        '/keesern.github.io/index.html',
+        '/keesern.github.io/style.css',
+        '/keesern.github.io/app.js',
+        '/keesern.github.io/image-list.js',
+        '/keesern.github.io/unstoppableLunch.jpg',
+        '/keesern.github.io/gallery/lunchBox.jpg',
+        '/keesern.github.io/gallery/jasonDeli.jpg'
+      ]);
     })
-  )
+  );
 });
 
 self.addEventListener('activate', event => {
