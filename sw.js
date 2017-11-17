@@ -5,6 +5,9 @@ const dbVersion = 2;
 const imgFilename = '/keesern.github.io/databasePic.jpg';
 
 self.addEventListener('install', function(event) {
+ 
+  console.log('installing service worker');
+
   event.waitUntil(
     caches.open('v5').then(function(cache) {
       return cache.addAll([
@@ -17,11 +20,7 @@ self.addEventListener('install', function(event) {
         '/keesern.github.io/gallery/jasonDeli.jpg'
       ]);
     })
-  );
-  
-  console.log('installing service worker');
-
-  event.waitUntil(
+    
     new Promise((resolve, reject) => {
       const request = self.indexedDB.open('images', dbVersion);
 
