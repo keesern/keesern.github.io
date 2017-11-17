@@ -39,33 +39,13 @@ self.addEventListener('fetch', function(event) {
         // and serve second one
         let responseClone = response.clone();
         
-        caches.open('v5').then(function (cache) {
+        caches.open('v1').then(function (cache) {
           cache.put(event.request, responseClone);
         });
         return response;
       }).catch(function () {
-        return caches.match('/keesern.github.io/gallery/snowTroopers.jpg');
+        return caches.match('/sw-test/gallery/myLittleVader.jpg');
       });
     }
   }));
-  
 });
-
-  
-/**
- * Convert a <code>Blob</code> to an <code>ArrayBuffer</code>.
- * @param {Blob} blob A <code>Blob</code>
- * @returns {Promise} Promise that resolves with the <code>ArrayBuffer</code>
- */
-function blobToArrayBuffer(blob) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-
-    reader.onloadend = event => {
-      resolve(event.target.result || new ArrayBuffer(0));
-    };
-    reader.onerror = reject;
-    reader.readAsArrayBuffer(blob);
-  });
-}
-  
