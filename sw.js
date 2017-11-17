@@ -32,7 +32,7 @@ self.addEventListener('fetch', function(event) {
         });
         return response;
       }).catch(function () {
-        return caches.match('/keesern.github.io/unstoppableLunch2.jpg');
+        return caches.match('/keesern.github.io/unstoppableLunch2.png');
       });
     }
   }));
