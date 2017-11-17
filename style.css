@@ -13,6 +13,14 @@ h1 {
   background: url(unstoppableLunch.jpg) no-repeat center;
 }
 
+
+h1 {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 197px;
+}
+
 section {
   max-width: 640px;
   margin: 0 auto;
