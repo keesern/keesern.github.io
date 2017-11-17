@@ -6,14 +6,14 @@ const imgFilename = '/keesern.github.io/databasePic.jpg';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v4').then(function(cache) {
+    caches.open('v6').then(function(cache) {
       return cache.addAll([
         '/keesern.github.io/',
         '/keesern.github.io/index.html',
         '/keesern.github.io/style.css',
         '/keesern.github.io/app.js',
         '/keesern.github.io/image-list.js',
-        '/keesern.github.io/unstoppableLunch.jpg',
+        '/keesern.github.io/unstoppableLunch2.jpg',
         '/keesern.github.io/gallery/lunchBox.jpg',
         '/keesern.github.io/gallery/jasonDeli.jpg'
       ]);
@@ -39,7 +39,7 @@ self.addEventListener('fetch', function(event) {
         // and serve second one
         let responseClone = response.clone();
         
-        caches.open('v1').then(function (cache) {
+        caches.open('v6').then(function (cache) {
           cache.put(event.request, responseClone);
         });
         return response;
