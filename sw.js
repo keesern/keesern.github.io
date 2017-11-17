@@ -3,13 +3,10 @@
 
 const dbVersion = 2;
 const imgFilename = '/keesern.github.io/databasePic.jpg';
-
-self.addEventListener('install', function(event) {
- 
+self.addEventListener('install', event => {
   console.log('installing service worker');
 
   event.waitUntil(
-    
     new Promise((resolve, reject) => {
       const request = self.indexedDB.open('images', dbVersion);
 
