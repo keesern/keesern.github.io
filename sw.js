@@ -126,6 +126,9 @@ self.addEventListener('fetch', function(event) {
             }
           )
         );
+  
+  
+});
 
   
 /**
@@ -143,7 +146,5 @@ function blobToArrayBuffer(blob) {
     reader.onerror = reject;
     reader.readAsArrayBuffer(blob);
   });
+}
   
-  
-  
-});
