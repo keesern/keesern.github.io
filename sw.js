@@ -2,7 +2,7 @@
 'use strict';
 
 const dbVersion = 1;
-const imgFilename = 'explore.jpg';
+const imgFilename = '/keesern.github.io/gallery/lunchBox.jpg';
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
